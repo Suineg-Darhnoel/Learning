@@ -11,6 +11,11 @@ void swap(int &a, int &b)
     b = tmp;
 }
 
+void printIt(const int &x)
+{
+    std::cout << x << '\n';
+}
+
 int main()
 {
     /* References work similarly in this regard.
@@ -60,6 +65,19 @@ int main()
      * Pointers should only be used in situations where references are
      * not sufficient (such as dynamically allocating memory).
     */
+
+    /* References to const values are particularly useful as function
+     * parameters because of their versatility.
+    */
+    int c = 1;
+    printIt(c); // non-const l-value
+
+    const int d = 2;
+    printIt(d); // const l-value
+
+    printIt(3); // literal r-value
+
+    printIt(2+d); // expression r-value
 
     return 0;
 }
