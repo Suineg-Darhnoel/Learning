@@ -44,5 +44,6 @@ int main()
      * An array that decayed to a pointer
      * cannot be used in for-each loop.
     */
+
     return 0;
 }
