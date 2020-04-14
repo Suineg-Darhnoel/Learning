@@ -1,0 +1,2 @@
+Log File - Wed Apr 15 00:44:01 JST 2020
+value of x is 4

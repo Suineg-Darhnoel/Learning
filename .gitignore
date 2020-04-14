@@ -1,8 +1,5 @@
-# Unignore all with extensions
-!*.*
-
 # Unignore Makefile
-!Makefile
+!**/Makefile
 
 # Ignore all file with extension .o
 *.o*
