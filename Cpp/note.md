@@ -132,3 +132,20 @@ can the value it is pointing to be changed through the pointer.
 __Reference variable__
 Best Practice:
 Pass arguments by non-const reference when the argument needs to be modified by the function.
+
+
+[comment]: <> (Not Formal Defintion but need to understand)
+**Lvalue** is something that points to a specific memory location.
+**Rvalue** is something that doesn't point anywhere.
+In general rvalues are temporary and short lived, while lvalues
+live a longer life since they exists as variables.
+
+Think of lvalues as *containers* and rvalues as *things*
+
+Example:
+```
+    int x = 3;
+```
+
+Here 3 is an rvalue.
+The variable x has a specific memory location, so it's an lvalue.
