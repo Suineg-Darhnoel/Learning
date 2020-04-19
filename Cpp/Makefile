@@ -1,7 +1,7 @@
 CPPFILES = main.cpp add.cpp foo.cpp goo.cpp a.cpp
 PROG = main
 CC = g++
-CPPFLAGS = -Wall -Weffc++ -Wextra -Wsign-conversion
+CPPFLAGS = -Wall -Weffc++ -Wextra -Wsign-conversion --std=c++17
 OBJS = main.o add.o 
 
 $(PROG) : $(OBJS)
