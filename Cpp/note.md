@@ -149,3 +149,45 @@ Example:
 
 Here 3 is an rvalue.
 The variable x has a specific memory location, so it's an lvalue.
+
+[comment]: <> (Chapter Summary)
+Arrays allow us to store and access many variables of the
+same type through a single identifier.
+
+Arrays can be made multidimensional by using multiple idices.
+std::string\_view and std::string instead
+
+The new and delete operators can be used to dynamically allocate
+memory for pointer variable or array.
+
+Although it's likely to happen, operator _new_ can fail if the
+operating system runs out of memory. If you're writing software
+for a memory-limited system, make sure to check if _new_ was
+successful.
+
+Make sure to use the array _delete_ when deleting an array.
+Pointers pointing to deallocated memory are called *dangling*
+pointers. Using the wrong _delete_, or deferencing a dangling
+pointer causes undefined behavior.
+
+Failing to delete dynamically allocated memory can result in
+memory leaks when the last pointer to that memory goes out
+of scope.
+
+Normal variables are allocated from limited memery called
+stack. Dynamically allocated variables are allocated from
+a general pool of memory called the heap.
+
+A pointer to a const value treats the value it is pointing
+to as const.
+
+A reference is an alias to another variable. References are
+declared using an ampersand (&), but this does not mean
+address-of in this context.
+
+References are implicitly const -- they must be initialized
+with a value, and a new value can not be assigned to them.
+References can be used to prevent copies from being made
+when passing data to or from a function.
+
+
