@@ -190,4 +190,9 @@ with a value, and a new value can not be assigned to them.
 References can be used to prevent copies from being made
 when passing data to or from a function.
 
+[comment]: <> (VIM's fix indentation)
+Use "gg=G"
 
+__Explanation__: *gg* goes to the top of the file, *=* is
+a command to fix the indentation and *G* tells it to perform
+the operation to the end of the file.
