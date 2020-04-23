@@ -196,3 +196,46 @@ Use "gg=G"
 __Explanation__: *gg* goes to the top of the file, *=* is
 a command to fix the indentation and *G* tells it to perform
 the operation to the end of the file.
+
+## 7.4a - Returning values by value, reference, and address
+
+### RETURN by VALUE
+When to use return by value:
+
+- When returning values that were declared inside the function
+- When returning function arguments that were passed by value
+
+When not to use return by value:
+
+- When returning a built-in array or pointer (use return by address)
+- When returning a large struct or class (use return by reference)
+
+### RETURN by ADDRESS
+When to use return by values:
+
+- When returning dynamically allocated memory and you can't
+use a type that handles allocations for you
+- When returning function arguments that were passed by address
+
+When not to use return by address:
+
+- When returning variables that were declared inside the function
+or parameters that were passed by value (use return by value)
+- When returning a large struct or class that was passed by
+reference (use return by reference)
+
+### RETURN by REFERENCE
+When to use return by reference:
+
+- When returning a reference parameter
+- When returning an element from an array that was passed into the function
+- When returning a large struct or class that will not be destroyed at
+the end of the function (e.g one that was passed in)
+
+When not to use return by reference:
+
+- When returning variables that were declared inside the function or
+parameters that were passed by value (use return by value)
+- When returning a built-in array or pointer value (use return by address)
+
+
