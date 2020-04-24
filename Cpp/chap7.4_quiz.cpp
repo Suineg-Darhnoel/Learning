@@ -54,6 +54,10 @@ int getIndexOfLargestValue2(std::vector<int>& v)
     return max_index;
 }
 
+const std::string* getElement(std::vector<std::string>& v, const int index)
+{
+    return &v.at(static_cast<size_t>(index));
+}
 
 int main()
 {
@@ -71,6 +75,13 @@ int main()
 
     int max_index2 { getIndexOfLargestValue2(v) };
     std::cout << v.at(static_cast<size_t>(max_index2)) << '\n';
+
+    std::vector<std::string> v2 {"Hello", "World", "I love programming"};
+
+    int size { static_cast<int> (v2.size()) };
+    std::cout << "PRINT ALL ELEMENTS IN v2\n";
+    for (int i {0}; i < size; ++i)
+        std::cout << *getElement(v2, i) << '\n';
 
     return 0;
 }
