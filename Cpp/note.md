@@ -238,4 +238,28 @@ When not to use return by reference:
 parameters that were passed by value (use return by value)
 - When returning a built-in array or pointer value (use return by address)
 
+### Lambdas (anonymous functions)
+A _lambda expression_ (also called a _lambda_ or _closure_) allows us to define
+an anonymous function inside another function.
+
+Syntax for lambdas
+~~~
+    [ captureClause ] (parameters) -> returnType
+    {
+        statements;
+    }
+~~~
+
+    In actuality, lambdas aren't functions (which is part of how they avoid
+    the limitation of C++ not supporting nested functions).
+    They're a special kind of object called a functor.
+    Functors are objects that contain an overloaded _operator()_ that
+    make them callable like a function.
+
+**Rule**
+Use _auto_ when initializing variables with lambdas, and _std::function_ if
+you can't initialize the variable with the lambda.
+
+    When used in the context of a lambda, _auto_ is just a shorthand for a template parameter.
+
 

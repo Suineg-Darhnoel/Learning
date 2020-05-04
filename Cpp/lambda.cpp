@@ -15,6 +15,7 @@ int main()
     auto it = std::find_if(values.begin(), values.end(), [](int value){ return value >3; });
     std::cout << *it << std::endl;
 
+    // [ captures ]<argument type declaration>{ expr }
     auto lambda = [=](int value) { std::cout << "Value: " << value << std::endl; };
     ForEach(values, lambda);
     return 0;
