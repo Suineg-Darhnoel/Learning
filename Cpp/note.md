@@ -262,4 +262,56 @@ you can't initialize the variable with the lambda.
 
     When used in the context of a lambda, _auto_ is just a shorthand for a template parameter.
 
+## Object Oriented Programming with C++
+### Classes and class members
 
+With normal non-member functions, a function can't call
+a function that's defined "below" it (without a forward declaration)
+
+~~~c
+    void x()
+    {
+        // You can't call y() from here unless the compiler
+        // has already seen a forward declaration for y()
+    }
+    void y()
+    {
+    }
+~~~
+
+With member functions, this limitation doesn't apply
+~~~c
+    class foo
+    {
+        plublic:
+            void x() { y(); }; // okay to call y() here, even though y() isn't deined until later in this class
+            void y() {};
+    }
+~~~
+
+In addition to member variables and member functios, _classes_ can have **member types** or **nested types** (including type aliases).
+~~~c
+    // Member types
+    class Calculator
+    {
+        public:
+            using number_t = int; // this is a nested type alias
+
+            std::vector<number_t> m_resultHistory{};
+            number_t add(number_t a, number_t b)
+            {
+                auto result{ a+b };
+                m_resultHistory.push_back(result);
+                return result;
+            }
+    };
+~~~
+
+Type alias members make code easier to maintain and can reduce typing.
+Template calsses often make use of type alias members.
+Nested types cannot be forward declared.
+
+~~~
+    Use the struct keyword for data-only structures.
+    Use the class keyword for objects that have both data and functions.
+~~~
