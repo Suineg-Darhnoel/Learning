@@ -4,20 +4,20 @@ import subprocess as subp
 
 CC = "g++"
 PROG = ""
-CPPFLAGS = [
+FLAGS = [
             "-Wall",
             "-Weffc++",
             "-Wextra",
             "-Wsign-conversion",
             "--std=c++17"
         ]
+CPPFLAGS = " ".join(FLAGS)
 OJBS = []
 CPPFILES = []
 
 if __name__ == "__main__":
     fname = sys.argv[1]
     if fname:
-        CPPFLAGS = " ".join(CPPFLAGS)
         cmd_line = f"{CC} {fname} -o {fname.replace('.cpp','')} {CPPFLAGS}"
         print(cmd_line)
         subp.run(cmd_line, shell=True)

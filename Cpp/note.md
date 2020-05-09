@@ -375,3 +375,116 @@ For best results, the following recommendations should be observed:
 1. Don't initialize member variables in such a way that they are dependent upon other member variables being initialized first.
 2. Initialize variables in the initialzer list in the same order in which  they are declared in your class.
 This isn't strictly required so long as the prior recommendation has been followed, but your compiler may give you a warning if you don't do so and you have all warnings turned on.
+
+## 8.6 Overlapping and delegating constructor
+
+**Using a separate function**
+Constructors are allowed to call non-constructor function in the class.
+The best solution to this issue is to create a non-constructor function that does the common initialization, and have both constructors call that function.
+
+~~~c++
+    class Foo
+    {
+        private:
+            int value {};
+            void DoA()
+            {
+                // code to do A
+            }
+        public:
+            Foo()
+            {
+                DoA();
+            }
+
+            Foo(int nValue): value {nValue}
+            {
+                DoA();
+                // code to do B
+            }
+    };
+~~~
+
+## 8.7 Destructors
+A *destructor* is another special kind of class member function that is executed when an object of that class is destroyed.
+
+If our class object is holding any resources (e.g. dynamic memory, or a file, or database handle), or if we need to do any kind of maintenance before the object is destroyed, the destructor is the perfect place to do so, as it is typically the last thing to happen before the object is destroyed.
+
+### Destructor naming
+
+Destructors have specific naming rules:
+1. The destructor must have the same name as the class, preceded by a tilde (~).
+2. The destructor can not take arguments.
+3. The destructor has no return type.
+
+*Warning*
+Note that if we use the exit() function, our program will terminate and no destructors will be called.
+
+## 8.8 `This` Pointer
+
+The *this* pointer is a hidden const pointer that holds the address of the object the member function was called on.
+
+**Summary**
+- The "this" pointer is a hidden parameter implicitly added to any non-static member function. Most of the time, you will not need to access it directly, but you can if needed.
+- It's worth noting that "this" is a const pointer -- you can change the value of the underlying object it points to, but you cannot make it point to something else!
+
+- By having functions that would otherwise return void return \*this instead, you
+can make those functions chainable.
+~~~c++
+    void setID(int id) { m_id = id; }
+~~~
+is converted by the compiler into:
+~~~c++
+    void setID(Simple* const this, int id) 
+    {
+         this -> m_id = id;
+    }
+~~~
+
+"*this*" always points to the object being operated on
+
+## 8.9 Class code and header files
+### Defining member functions outside the class defintion
+
+As classes get longer and more complicated, having all the member function definitions inside the class can make the class harder to manage and work with.
+
+C++ provides a way to seperate the "declaration" portion of the class from the "implementation" portion. This is done by defining the class member functions outside of the class definition.
+
+To do so, simply define the member functions of the class as if they were normal functions, but prefix the class name to the function using the *scope resolution* (::) (same as for a namespace).
+
+**Recommendation**
+- For classes used in only one file that aren't generally resusable, define them directly in the single .cpp file they're used in.
+- For classes used in multiple files, or intended for general reuse, define them in a .h file that has the same name as the class.
+- Trivial member functions (trivial constructors or destructors, access functions, etc...) can be defined inside the class.
+- Non-trivial member functions should be defined in a .cpp file that has the same name as the class.
+
+**Library**
+Throughout your programs, you've #included headers that belong to the standard library, such as iostream, string, vector, array, and other.
+Notice that we haven't needed to add iostream.cpp, string.cpp, vector.cpp, or array.cpp into our projects.
+Our program needs the declarations from the header files in order for the compiler to contained in a precompiled file that is linked in at the link stage.
+
+Most 3rd party libraries provide only header files, along with a precompiled library file.
+
+*Reasons*:
+1. It's faster to link a precompiled library than to recompile it every time we need it.
+2. A single copy of a precompiled library can be shared by many applications, whereas compiled code gets compiled into every executable that uses it
+3. Intellectual property reasons (when we don't want people to steal our code)
+
+## 8.10 Const class objects and member functions
+*Rule*: Make any member function that does not modify the state of the class object const, so that it can be called by const objects.
+
+### Overloading const and non-const function
+~~~c++
+class Something
+{
+    private:
+        std::string m_value;
+    public:
+        Something(const std::string &value="") { m_value = value; }
+        const std::string& getValue() const { return m_value; } // getValue() for const objects
+        std::string& getValue() { return m_value; } // getValue() for non-const objects
+};
+~~~
+
+**Summary**
+Because passing objects by const reference is common, our classes should be const-friendly. That means making any member function that does not modify the state of the class object const!
