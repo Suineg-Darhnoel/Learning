@@ -488,3 +488,37 @@ class Something
 
 **Summary**
 Because passing objects by const reference is common, our classes should be const-friendly. That means making any member function that does not modify the state of the class object const!
+
+## 8.11 Static Member Variables
+
+Member variables of a class can be made static by using the static keyword.
+Static member variables are shared by all objects of the class.
+~~~c++
+    class Something
+    {
+        public:
+            static int s_var;
+    };
+
+    int Something::s_var {2};
+
+    int main()
+    {
+        Something first;
+        Something second;
+
+        std::cout << first.s_var << '\n';
+        std::cout << second.s_var << '\n';
+
+        return 0;
+    }
+~~~
+
+**Static members are not associated with class objects**
+
+Static members belongs to the class itself, not to the objects of the class.
+It can be accessed directly using the class name and the scope resolution operator (in this case, Something::s\_value) because s\_value exists independently of any class objects.
+
+**Defining and initializing static member variables**
+
+We must explicitly define the static member outside of the class, in the global scope.
