@@ -522,3 +522,53 @@ It can be accessed directly using the class name and the scope resolution operat
 **Defining and initializing static member variables**
 
 We must explicitly define the static member outside of the class, in the global scope.
+
+## 8.12 Static member functions
+**Summary**
+Static member functions can be used to work with static member variables in the class.
+An object of the class is not required to call them.
+
+Classes can be created with all static member variables and static functions.
+Hoewer, such classes are essentially the eauivalent of declaring functions and globally accessible namespace, and should generally be avoided unless you have a particular good reason to use them.
+
+## 8.13 Friend functions and classes
+
+- A *friend function* is a function that can access the private members of a class as though it were a member of that class.
+- In all other regards, the friend function is just like a normal function.
+- A friend function may be either a normal function, or a member of another class.
+- To declare a friend function, simply use the _friend_ keyword in front of the prototype of the function you wish to be a friend of the class.
+
+### Friend classes
+~~~c++
+// Friend Classes
+class Storage
+{
+    private:
+        int m_nValue;
+        double m_dValue;
+    public:
+        Storage(int nValue, double dValue)
+        {
+            m_nValue = nValue;
+            m_dValue = dValue;
+        }
+        // Make the Display class a friend of Storage
+        friend class Display;
+};
+
+class Display
+{
+    private:
+        bool m_displayIntFirst;
+    public:
+        Display (bool displayIntFirst) { m_displayIntFirst = displayIntFirst; }
+        void displayItem(const Storage &storage)
+        {
+            if (m_displayIntFirst)
+                std::cout << storage.m_nValue << " " << storage.m_dValue << '\n';
+            else
+                std::cout << storage.m_dValue << " " << storage.m_nValue << '\n';
+        }
+};
+~~~
+Because the Display class is a friend of Storage, any of Display's members that use a Storage class object can access the private members of Storage directly.
