@@ -572,3 +572,11 @@ class Display
 };
 ~~~
 Because the Display class is a friend of Storage, any of Display's members that use a Storage class object can access the private members of Storage directly.
+
+## Anonymous-objects
+### Anonymous class objects
+
+~~~c++
+    Cents cents(5); // normal variable
+    Cents(7) // anonymous object
+~~~
