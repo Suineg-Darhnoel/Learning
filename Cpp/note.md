@@ -580,3 +580,52 @@ Because the Display class is a friend of Storage, any of Display's members that 
     Cents cents(5); // normal variable
     Cents(7) // anonymous object
 ~~~
+
+## The Copy Constructor
+
+A _copy constructor_ is a special type of constructor used to create a new object as a copy of existing object. And much like a default constructor, if you do not provide a copy constructor for your classes, C++ will create a public copy constructor for you.
+Because the compiler does not know much about your class, by default, the created copy constructor utilizes a method of initialization called memberwise initialization.
+_Memberwise initialization_ simply means that each member of the copy is initialized directly from the member of the class being copied.
+
+_Preventing copies_: use private
+~~~c++
+class Fraction
+{
+    private:
+        int m_numerator;
+        int m_denominator;
+
+        // Copy constructor (private)
+        Fraction(const Fraction &fraction) :
+            m_numerator(fraction.m_numerator), m_denominator(fraction.m_denominator)
+    {
+        // no need to check for a denominator of 0 here since fraction must already be a valid Fraction
+        std::cout << "Copy constructor called\n"; // just to prove it works
+    }
+
+    public:
+        // Default constructor
+        Fraction(int numerator=0, int denominator=1) :
+            m_numerator(numerator), m_denominator(denominator)
+    {
+        assert(denominator != 0);
+    }
+
+        friend std::ostream& operator<<(std::ostream& out, const Fraction &f1);
+};
+
+std::ostream& operator<<(std::ostream& out, const Fraction &f1)
+{
+    out << f1.m_numerator << "/" << f1.m_denominator;
+    return out;
+}
+~~~
+You may encounter a process called _elision_.
+It happens when you initialize an object using anonymous object.
+~~~c++
+Fraction fiveThrids(Fraction(5, 3))
+~~~
+The compiler may change this to:
+~~~c++
+Fraction fiveThrids(5, 3)
+~~~
