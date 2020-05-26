@@ -1,0 +1,27 @@
+# declare the variable
+CC=g++
+CFLAGS=-Wall -Wextra
+LDFLAGS=$(shell pkg-config --cflags --libs opencv4)
+FILENAME=hough_circle_transform.cpp
+
+SRCs=$(wildcard *.cpp)
+
+show: $(SRCs)
+	@echo "Source files that exist in this directory: "
+	@echo $(SRCs)
+
+hct.o: $(FILENAME)
+	$(CC) -c $(FILENAME) -o hct.o $(CFLAGS) $(LDFLAGS)
+
+hct: hct.o
+	$(CC) hct.o -o hct $(LDFLAGS)
+
+EDGE=edge_detection.cpp
+edge: $(EDGE)
+	$(CC) $(EDGE) -o edge $(LDFLAGS)
+
+readimg: readimg.cpp
+	$(CC) readimg.cpp -o readimg $(CFLAGS) $(LDFLAGS)
+
+clean:
+	rm hct.o hct
