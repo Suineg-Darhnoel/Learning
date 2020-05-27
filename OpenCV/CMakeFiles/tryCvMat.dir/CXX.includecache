@@ -11,6 +11,8 @@ iostream
 -
 opencv2/core.hpp
 -
+opencv2/highgui.hpp
+-
 
 /usr/local/include/opencv4/opencv2/core.hpp
 opencv2/core/cvdef.h
@@ -326,5 +328,21 @@ opencv2/core/cvdef.h
 assert.h
 -
 
+/usr/local/include/opencv4/opencv2/highgui.hpp
+opencv2/core.hpp
+/usr/local/include/opencv4/opencv2/opencv2/core.hpp
+opencv2/imgcodecs.hpp
+/usr/local/include/opencv4/opencv2/opencv2/imgcodecs.hpp
+opencv2/videoio.hpp
+/usr/local/include/opencv4/opencv2/opencv2/videoio.hpp
+
+/usr/local/include/opencv4/opencv2/imgcodecs.hpp
+opencv2/core.hpp
+/usr/local/include/opencv4/opencv2/opencv2/core.hpp
+
 /usr/local/include/opencv4/opencv2/opencv_modules.hpp
+
+/usr/local/include/opencv4/opencv2/videoio.hpp
+opencv2/core.hpp
+/usr/local/include/opencv4/opencv2/opencv2/core.hpp
 

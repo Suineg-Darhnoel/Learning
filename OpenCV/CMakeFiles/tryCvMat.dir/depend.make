@@ -31,5 +31,8 @@ CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o: /usr/local/include/opencv4/opencv2/core/
 CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o: /usr/local/include/opencv4/opencv2/core/utils/tls.hpp
 CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o: /usr/local/include/opencv4/opencv2/core/version.hpp
 CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o: /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
+CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o: /usr/local/include/opencv4/opencv2/highgui.hpp
+CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o: /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o: /usr/local/include/opencv4/opencv2/opencv_modules.hpp
+CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o: /usr/local/include/opencv4/opencv2/videoio.hpp
 

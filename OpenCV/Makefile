@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,30 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named min_max-filter
+# Target rules for targets named hough-circle
 
 # Build rule for target.
-min_max-filter: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 min_max-filter
-.PHONY : min_max-filter
+hough-circle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hough-circle
+.PHONY : hough-circle
 
 # fast build rule for target.
-min_max-filter/fast:
-	$(MAKE) -f CMakeFiles/min_max-filter.dir/build.make CMakeFiles/min_max-filter.dir/build
-.PHONY : min_max-filter/fast
+hough-circle/fast:
+	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/build
+.PHONY : hough-circle/fast
 
 #=============================================================================
-# Target rules for targets named prototype
+# Target rules for targets named main
 
 # Build rule for target.
-prototype: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 prototype
-.PHONY : prototype
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-prototype/fast:
-	$(MAKE) -f CMakeFiles/prototype.dir/build.make CMakeFiles/prototype.dir/build
-.PHONY : prototype/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
 # Target rules for targets named find_n_draw_contour
@@ -189,17 +189,17 @@ ui/fast:
 .PHONY : ui/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named eyes-detection
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+eyes-detection: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 eyes-detection
+.PHONY : eyes-detection
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+eyes-detection/fast:
+	$(MAKE) -f CMakeFiles/eyes-detection.dir/build.make CMakeFiles/eyes-detection.dir/build
+.PHONY : eyes-detection/fast
 
 #=============================================================================
 # Target rules for targets named conv2gray
@@ -215,6 +215,32 @@ conv2gray/fast:
 .PHONY : conv2gray/fast
 
 #=============================================================================
+# Target rules for targets named min_max-filter
+
+# Build rule for target.
+min_max-filter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 min_max-filter
+.PHONY : min_max-filter
+
+# fast build rule for target.
+min_max-filter/fast:
+	$(MAKE) -f CMakeFiles/min_max-filter.dir/build.make CMakeFiles/min_max-filter.dir/build
+.PHONY : min_max-filter/fast
+
+#=============================================================================
+# Target rules for targets named prototype
+
+# Build rule for target.
+prototype: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prototype
+.PHONY : prototype
+
+# fast build rule for target.
+prototype/fast:
+	$(MAKE) -f CMakeFiles/prototype.dir/build.make CMakeFiles/prototype.dir/build
+.PHONY : prototype/fast
+
+#=============================================================================
 # Target rules for targets named motion-filter
 
 # Build rule for target.
@@ -226,6 +252,19 @@ motion-filter: cmake_check_build_system
 motion-filter/fast:
 	$(MAKE) -f CMakeFiles/motion-filter.dir/build.make CMakeFiles/motion-filter.dir/build
 .PHONY : motion-filter/fast
+
+#=============================================================================
+# Target rules for targets named pupil-detection
+
+# Build rule for target.
+pupil-detection: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pupil-detection
+.PHONY : pupil-detection
+
+# fast build rule for target.
+pupil-detection/fast:
+	$(MAKE) -f CMakeFiles/pupil-detection.dir/build.make CMakeFiles/pupil-detection.dir/build
+.PHONY : pupil-detection/fast
 
 #=============================================================================
 # Target rules for targets named readimg
@@ -265,45 +304,6 @@ remove-background: cmake_check_build_system
 remove-background/fast:
 	$(MAKE) -f CMakeFiles/remove-background.dir/build.make CMakeFiles/remove-background.dir/build
 .PHONY : remove-background/fast
-
-#=============================================================================
-# Target rules for targets named tryHist
-
-# Build rule for target.
-tryHist: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tryHist
-.PHONY : tryHist
-
-# fast build rule for target.
-tryHist/fast:
-	$(MAKE) -f CMakeFiles/tryHist.dir/build.make CMakeFiles/tryHist.dir/build
-.PHONY : tryHist/fast
-
-#=============================================================================
-# Target rules for targets named tryCvMat
-
-# Build rule for target.
-tryCvMat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tryCvMat
-.PHONY : tryCvMat
-
-# fast build rule for target.
-tryCvMat/fast:
-	$(MAKE) -f CMakeFiles/tryCvMat.dir/build.make CMakeFiles/tryCvMat.dir/build
-.PHONY : tryCvMat/fast
-
-#=============================================================================
-# Target rules for targets named tryVideo
-
-# Build rule for target.
-tryVideo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tryVideo
-.PHONY : tryVideo
-
-# fast build rule for target.
-tryVideo/fast:
-	$(MAKE) -f CMakeFiles/tryVideo.dir/build.make CMakeFiles/tryVideo.dir/build
-.PHONY : tryVideo/fast
 
 conv2gray.o: conv2gray.cpp.o
 
@@ -359,6 +359,33 @@ edge_detection.cpp.s:
 	$(MAKE) -f CMakeFiles/edge_detection.dir/build.make CMakeFiles/edge_detection.dir/edge_detection.cpp.s
 .PHONY : edge_detection.cpp.s
 
+eyes-detection.o: eyes-detection.cpp.o
+
+.PHONY : eyes-detection.o
+
+# target to build an object file
+eyes-detection.cpp.o:
+	$(MAKE) -f CMakeFiles/eyes-detection.dir/build.make CMakeFiles/eyes-detection.dir/eyes-detection.cpp.o
+.PHONY : eyes-detection.cpp.o
+
+eyes-detection.i: eyes-detection.cpp.i
+
+.PHONY : eyes-detection.i
+
+# target to preprocess a source file
+eyes-detection.cpp.i:
+	$(MAKE) -f CMakeFiles/eyes-detection.dir/build.make CMakeFiles/eyes-detection.dir/eyes-detection.cpp.i
+.PHONY : eyes-detection.cpp.i
+
+eyes-detection.s: eyes-detection.cpp.s
+
+.PHONY : eyes-detection.s
+
+# target to generate assembly for a file
+eyes-detection.cpp.s:
+	$(MAKE) -f CMakeFiles/eyes-detection.dir/build.make CMakeFiles/eyes-detection.dir/eyes-detection.cpp.s
+.PHONY : eyes-detection.cpp.s
+
 find_n_draw_contour.o: find_n_draw_contour.cpp.o
 
 .PHONY : find_n_draw_contour.o
@@ -412,6 +439,33 @@ hcircle_trsf.s: hcircle_trsf.cpp.s
 hcircle_trsf.cpp.s:
 	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/hcircle_trsf.cpp.s
 .PHONY : hcircle_trsf.cpp.s
+
+hough-circle.o: hough-circle.cpp.o
+
+.PHONY : hough-circle.o
+
+# target to build an object file
+hough-circle.cpp.o:
+	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/hough-circle.cpp.o
+.PHONY : hough-circle.cpp.o
+
+hough-circle.i: hough-circle.cpp.i
+
+.PHONY : hough-circle.i
+
+# target to preprocess a source file
+hough-circle.cpp.i:
+	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/hough-circle.cpp.i
+.PHONY : hough-circle.cpp.i
+
+hough-circle.s: hough-circle.cpp.s
+
+.PHONY : hough-circle.s
+
+# target to generate assembly for a file
+hough-circle.cpp.s:
+	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/hough-circle.cpp.s
+.PHONY : hough-circle.cpp.s
 
 main.o: main.cpp.o
 
@@ -521,6 +575,33 @@ prototype.cpp.s:
 	$(MAKE) -f CMakeFiles/prototype.dir/build.make CMakeFiles/prototype.dir/prototype.cpp.s
 .PHONY : prototype.cpp.s
 
+pupil-detection.o: pupil-detection.cpp.o
+
+.PHONY : pupil-detection.o
+
+# target to build an object file
+pupil-detection.cpp.o:
+	$(MAKE) -f CMakeFiles/pupil-detection.dir/build.make CMakeFiles/pupil-detection.dir/pupil-detection.cpp.o
+.PHONY : pupil-detection.cpp.o
+
+pupil-detection.i: pupil-detection.cpp.i
+
+.PHONY : pupil-detection.i
+
+# target to preprocess a source file
+pupil-detection.cpp.i:
+	$(MAKE) -f CMakeFiles/pupil-detection.dir/build.make CMakeFiles/pupil-detection.dir/pupil-detection.cpp.i
+.PHONY : pupil-detection.cpp.i
+
+pupil-detection.s: pupil-detection.cpp.s
+
+.PHONY : pupil-detection.s
+
+# target to generate assembly for a file
+pupil-detection.cpp.s:
+	$(MAKE) -f CMakeFiles/pupil-detection.dir/build.make CMakeFiles/pupil-detection.dir/pupil-detection.cpp.s
+.PHONY : pupil-detection.cpp.s
+
 readimg.o: readimg.cpp.o
 
 .PHONY : readimg.o
@@ -602,87 +683,6 @@ slider_mouse-opcv.cpp.s:
 	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/slider_mouse-opcv.cpp.s
 .PHONY : slider_mouse-opcv.cpp.s
 
-tryCvMat.o: tryCvMat.cpp.o
-
-.PHONY : tryCvMat.o
-
-# target to build an object file
-tryCvMat.cpp.o:
-	$(MAKE) -f CMakeFiles/tryCvMat.dir/build.make CMakeFiles/tryCvMat.dir/tryCvMat.cpp.o
-.PHONY : tryCvMat.cpp.o
-
-tryCvMat.i: tryCvMat.cpp.i
-
-.PHONY : tryCvMat.i
-
-# target to preprocess a source file
-tryCvMat.cpp.i:
-	$(MAKE) -f CMakeFiles/tryCvMat.dir/build.make CMakeFiles/tryCvMat.dir/tryCvMat.cpp.i
-.PHONY : tryCvMat.cpp.i
-
-tryCvMat.s: tryCvMat.cpp.s
-
-.PHONY : tryCvMat.s
-
-# target to generate assembly for a file
-tryCvMat.cpp.s:
-	$(MAKE) -f CMakeFiles/tryCvMat.dir/build.make CMakeFiles/tryCvMat.dir/tryCvMat.cpp.s
-.PHONY : tryCvMat.cpp.s
-
-tryHist.o: tryHist.cpp.o
-
-.PHONY : tryHist.o
-
-# target to build an object file
-tryHist.cpp.o:
-	$(MAKE) -f CMakeFiles/tryHist.dir/build.make CMakeFiles/tryHist.dir/tryHist.cpp.o
-.PHONY : tryHist.cpp.o
-
-tryHist.i: tryHist.cpp.i
-
-.PHONY : tryHist.i
-
-# target to preprocess a source file
-tryHist.cpp.i:
-	$(MAKE) -f CMakeFiles/tryHist.dir/build.make CMakeFiles/tryHist.dir/tryHist.cpp.i
-.PHONY : tryHist.cpp.i
-
-tryHist.s: tryHist.cpp.s
-
-.PHONY : tryHist.s
-
-# target to generate assembly for a file
-tryHist.cpp.s:
-	$(MAKE) -f CMakeFiles/tryHist.dir/build.make CMakeFiles/tryHist.dir/tryHist.cpp.s
-.PHONY : tryHist.cpp.s
-
-tryVideo.o: tryVideo.cpp.o
-
-.PHONY : tryVideo.o
-
-# target to build an object file
-tryVideo.cpp.o:
-	$(MAKE) -f CMakeFiles/tryVideo.dir/build.make CMakeFiles/tryVideo.dir/tryVideo.cpp.o
-.PHONY : tryVideo.cpp.o
-
-tryVideo.i: tryVideo.cpp.i
-
-.PHONY : tryVideo.i
-
-# target to preprocess a source file
-tryVideo.cpp.i:
-	$(MAKE) -f CMakeFiles/tryVideo.dir/build.make CMakeFiles/tryVideo.dir/tryVideo.cpp.i
-.PHONY : tryVideo.cpp.i
-
-tryVideo.s: tryVideo.cpp.s
-
-.PHONY : tryVideo.s
-
-# target to generate assembly for a file
-tryVideo.cpp.s:
-	$(MAKE) -f CMakeFiles/tryVideo.dir/build.make CMakeFiles/tryVideo.dir/tryVideo.cpp.s
-.PHONY : tryVideo.cpp.s
-
 ui.o: ui.cpp.o
 
 .PHONY : ui.o
@@ -716,35 +716,41 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... min_max-filter"
-	@echo "... prototype"
-	@echo "... edit_cache"
+	@echo "... hough-circle"
+	@echo "... main"
 	@echo "... rebuild_cache"
 	@echo "... find_n_draw_contour"
 	@echo "... hcircle_trsf"
 	@echo "... slider_mouse-opcv"
 	@echo "... ui"
-	@echo "... main"
+	@echo "... eyes-detection"
 	@echo "... conv2gray"
+	@echo "... min_max-filter"
+	@echo "... prototype"
+	@echo "... edit_cache"
 	@echo "... motion-filter"
+	@echo "... pupil-detection"
 	@echo "... readimg"
 	@echo "... edge_detection"
 	@echo "... remove-background"
-	@echo "... tryHist"
-	@echo "... tryCvMat"
-	@echo "... tryVideo"
 	@echo "... conv2gray.o"
 	@echo "... conv2gray.i"
 	@echo "... conv2gray.s"
 	@echo "... edge_detection.o"
 	@echo "... edge_detection.i"
 	@echo "... edge_detection.s"
+	@echo "... eyes-detection.o"
+	@echo "... eyes-detection.i"
+	@echo "... eyes-detection.s"
 	@echo "... find_n_draw_contour.o"
 	@echo "... find_n_draw_contour.i"
 	@echo "... find_n_draw_contour.s"
 	@echo "... hcircle_trsf.o"
 	@echo "... hcircle_trsf.i"
 	@echo "... hcircle_trsf.s"
+	@echo "... hough-circle.o"
+	@echo "... hough-circle.i"
+	@echo "... hough-circle.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -757,6 +763,9 @@ help:
 	@echo "... prototype.o"
 	@echo "... prototype.i"
 	@echo "... prototype.s"
+	@echo "... pupil-detection.o"
+	@echo "... pupil-detection.i"
+	@echo "... pupil-detection.s"
 	@echo "... readimg.o"
 	@echo "... readimg.i"
 	@echo "... readimg.s"
@@ -766,15 +775,6 @@ help:
 	@echo "... slider_mouse-opcv.o"
 	@echo "... slider_mouse-opcv.i"
 	@echo "... slider_mouse-opcv.s"
-	@echo "... tryCvMat.o"
-	@echo "... tryCvMat.i"
-	@echo "... tryCvMat.s"
-	@echo "... tryHist.o"
-	@echo "... tryHist.i"
-	@echo "... tryHist.s"
-	@echo "... tryVideo.o"
-	@echo "... tryVideo.i"
-	@echo "... tryVideo.s"
 	@echo "... ui.o"
 	@echo "... ui.i"
 	@echo "... ui.s"

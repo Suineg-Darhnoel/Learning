@@ -48,19 +48,19 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/min_max-filter.dir/DependInfo.cmake"
-  "CMakeFiles/prototype.dir/DependInfo.cmake"
+  "CMakeFiles/hough-circle.dir/DependInfo.cmake"
+  "CMakeFiles/main.dir/DependInfo.cmake"
   "CMakeFiles/find_n_draw_contour.dir/DependInfo.cmake"
   "CMakeFiles/hcircle_trsf.dir/DependInfo.cmake"
   "CMakeFiles/slider_mouse-opcv.dir/DependInfo.cmake"
   "CMakeFiles/ui.dir/DependInfo.cmake"
-  "CMakeFiles/main.dir/DependInfo.cmake"
+  "CMakeFiles/eyes-detection.dir/DependInfo.cmake"
   "CMakeFiles/conv2gray.dir/DependInfo.cmake"
+  "CMakeFiles/min_max-filter.dir/DependInfo.cmake"
+  "CMakeFiles/prototype.dir/DependInfo.cmake"
   "CMakeFiles/motion-filter.dir/DependInfo.cmake"
+  "CMakeFiles/pupil-detection.dir/DependInfo.cmake"
   "CMakeFiles/readimg.dir/DependInfo.cmake"
   "CMakeFiles/edge_detection.dir/DependInfo.cmake"
   "CMakeFiles/remove-background.dir/DependInfo.cmake"
-  "CMakeFiles/tryHist.dir/DependInfo.cmake"
-  "CMakeFiles/tryCvMat.dir/DependInfo.cmake"
-  "CMakeFiles/tryVideo.dir/DependInfo.cmake"
   )
