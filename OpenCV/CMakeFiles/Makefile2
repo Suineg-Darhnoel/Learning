@@ -60,198 +60,13 @@ CMAKE_SOURCE_DIR = /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV
 CMAKE_BINARY_DIR = /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV
 
 #=============================================================================
-# Target rules for target CMakeFiles/hough-circle.dir
-
-# All Build rule for target.
-CMakeFiles/hough-circle.dir/all:
-	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/depend
-	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=11,12 "Built target hough-circle"
-.PHONY : CMakeFiles/hough-circle.dir/all
-
-# Include target in all.
-all: CMakeFiles/hough-circle.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/hough-circle.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hough-circle.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
-.PHONY : CMakeFiles/hough-circle.dir/rule
-
-# Convenience name for target.
-hough-circle: CMakeFiles/hough-circle.dir/rule
-
-.PHONY : hough-circle
-
-# clean rule for target.
-CMakeFiles/hough-circle.dir/clean:
-	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/clean
-.PHONY : CMakeFiles/hough-circle.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/hough-circle.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/main.dir
-
-# All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=13,14 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
-
-# Include target in all.
-all: CMakeFiles/main.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/main.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/find_n_draw_contour.dir
-
-# All Build rule for target.
-CMakeFiles/find_n_draw_contour.dir/all:
-	$(MAKE) -f CMakeFiles/find_n_draw_contour.dir/build.make CMakeFiles/find_n_draw_contour.dir/depend
-	$(MAKE) -f CMakeFiles/find_n_draw_contour.dir/build.make CMakeFiles/find_n_draw_contour.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=7,8 "Built target find_n_draw_contour"
-.PHONY : CMakeFiles/find_n_draw_contour.dir/all
-
-# Include target in all.
-all: CMakeFiles/find_n_draw_contour.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/find_n_draw_contour.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/find_n_draw_contour.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
-.PHONY : CMakeFiles/find_n_draw_contour.dir/rule
-
-# Convenience name for target.
-find_n_draw_contour: CMakeFiles/find_n_draw_contour.dir/rule
-
-.PHONY : find_n_draw_contour
-
-# clean rule for target.
-CMakeFiles/find_n_draw_contour.dir/clean:
-	$(MAKE) -f CMakeFiles/find_n_draw_contour.dir/build.make CMakeFiles/find_n_draw_contour.dir/clean
-.PHONY : CMakeFiles/find_n_draw_contour.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/find_n_draw_contour.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/hcircle_trsf.dir
-
-# All Build rule for target.
-CMakeFiles/hcircle_trsf.dir/all:
-	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/depend
-	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=9,10 "Built target hcircle_trsf"
-.PHONY : CMakeFiles/hcircle_trsf.dir/all
-
-# Include target in all.
-all: CMakeFiles/hcircle_trsf.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/hcircle_trsf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hcircle_trsf.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
-.PHONY : CMakeFiles/hcircle_trsf.dir/rule
-
-# Convenience name for target.
-hcircle_trsf: CMakeFiles/hcircle_trsf.dir/rule
-
-.PHONY : hcircle_trsf
-
-# clean rule for target.
-CMakeFiles/hcircle_trsf.dir/clean:
-	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/clean
-.PHONY : CMakeFiles/hcircle_trsf.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/hcircle_trsf.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/slider_mouse-opcv.dir
-
-# All Build rule for target.
-CMakeFiles/slider_mouse-opcv.dir/all:
-	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/depend
-	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=27,28 "Built target slider_mouse-opcv"
-.PHONY : CMakeFiles/slider_mouse-opcv.dir/all
-
-# Include target in all.
-all: CMakeFiles/slider_mouse-opcv.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/slider_mouse-opcv.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/slider_mouse-opcv.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
-.PHONY : CMakeFiles/slider_mouse-opcv.dir/rule
-
-# Convenience name for target.
-slider_mouse-opcv: CMakeFiles/slider_mouse-opcv.dir/rule
-
-.PHONY : slider_mouse-opcv
-
-# clean rule for target.
-CMakeFiles/slider_mouse-opcv.dir/clean:
-	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/clean
-.PHONY : CMakeFiles/slider_mouse-opcv.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/slider_mouse-opcv.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/ui.dir
 
 # All Build rule for target.
 CMakeFiles/ui.dir/all:
 	$(MAKE) -f CMakeFiles/ui.dir/build.make CMakeFiles/ui.dir/depend
 	$(MAKE) -f CMakeFiles/ui.dir/build.make CMakeFiles/ui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=29,30 "Built target ui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=33,34 "Built target ui"
 .PHONY : CMakeFiles/ui.dir/all
 
 # Include target in all.
@@ -282,13 +97,124 @@ clean: CMakeFiles/ui.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/fourier_transform.dir
+
+# All Build rule for target.
+CMakeFiles/fourier_transform.dir/all:
+	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/depend
+	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=11,12 "Built target fourier_transform"
+.PHONY : CMakeFiles/fourier_transform.dir/all
+
+# Include target in all.
+all: CMakeFiles/fourier_transform.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/fourier_transform.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/fourier_transform.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
+.PHONY : CMakeFiles/fourier_transform.dir/rule
+
+# Convenience name for target.
+fourier_transform: CMakeFiles/fourier_transform.dir/rule
+
+.PHONY : fourier_transform
+
+# clean rule for target.
+CMakeFiles/fourier_transform.dir/clean:
+	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/clean
+.PHONY : CMakeFiles/fourier_transform.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/fourier_transform.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/readimg.dir
+
+# All Build rule for target.
+CMakeFiles/readimg.dir/all:
+	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/depend
+	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=27,28 "Built target readimg"
+.PHONY : CMakeFiles/readimg.dir/all
+
+# Include target in all.
+all: CMakeFiles/readimg.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/readimg.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/readimg.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
+.PHONY : CMakeFiles/readimg.dir/rule
+
+# Convenience name for target.
+readimg: CMakeFiles/readimg.dir/rule
+
+.PHONY : readimg
+
+# clean rule for target.
+CMakeFiles/readimg.dir/clean:
+	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/clean
+.PHONY : CMakeFiles/readimg.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/readimg.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/find_n_draw_contour.dir
+
+# All Build rule for target.
+CMakeFiles/find_n_draw_contour.dir/all:
+	$(MAKE) -f CMakeFiles/find_n_draw_contour.dir/build.make CMakeFiles/find_n_draw_contour.dir/depend
+	$(MAKE) -f CMakeFiles/find_n_draw_contour.dir/build.make CMakeFiles/find_n_draw_contour.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=9,10 "Built target find_n_draw_contour"
+.PHONY : CMakeFiles/find_n_draw_contour.dir/all
+
+# Include target in all.
+all: CMakeFiles/find_n_draw_contour.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/find_n_draw_contour.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/find_n_draw_contour.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
+.PHONY : CMakeFiles/find_n_draw_contour.dir/rule
+
+# Convenience name for target.
+find_n_draw_contour: CMakeFiles/find_n_draw_contour.dir/rule
+
+.PHONY : find_n_draw_contour
+
+# clean rule for target.
+CMakeFiles/find_n_draw_contour.dir/clean:
+	$(MAKE) -f CMakeFiles/find_n_draw_contour.dir/build.make CMakeFiles/find_n_draw_contour.dir/clean
+.PHONY : CMakeFiles/find_n_draw_contour.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/find_n_draw_contour.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/eyes-detection.dir
 
 # All Build rule for target.
 CMakeFiles/eyes-detection.dir/all:
 	$(MAKE) -f CMakeFiles/eyes-detection.dir/build.make CMakeFiles/eyes-detection.dir/depend
 	$(MAKE) -f CMakeFiles/eyes-detection.dir/build.make CMakeFiles/eyes-detection.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=5,6 "Built target eyes-detection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=7,8 "Built target eyes-detection"
 .PHONY : CMakeFiles/eyes-detection.dir/all
 
 # Include target in all.
@@ -325,7 +251,7 @@ clean: CMakeFiles/eyes-detection.dir/clean
 CMakeFiles/conv2gray.dir/all:
 	$(MAKE) -f CMakeFiles/conv2gray.dir/build.make CMakeFiles/conv2gray.dir/depend
 	$(MAKE) -f CMakeFiles/conv2gray.dir/build.make CMakeFiles/conv2gray.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=1,2 "Built target conv2gray"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=3,4 "Built target conv2gray"
 .PHONY : CMakeFiles/conv2gray.dir/all
 
 # Include target in all.
@@ -356,13 +282,198 @@ clean: CMakeFiles/conv2gray.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/calcHist_Demo.dir
+
+# All Build rule for target.
+CMakeFiles/calcHist_Demo.dir/all:
+	$(MAKE) -f CMakeFiles/calcHist_Demo.dir/build.make CMakeFiles/calcHist_Demo.dir/depend
+	$(MAKE) -f CMakeFiles/calcHist_Demo.dir/build.make CMakeFiles/calcHist_Demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=1,2 "Built target calcHist_Demo"
+.PHONY : CMakeFiles/calcHist_Demo.dir/all
+
+# Include target in all.
+all: CMakeFiles/calcHist_Demo.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/calcHist_Demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/calcHist_Demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
+.PHONY : CMakeFiles/calcHist_Demo.dir/rule
+
+# Convenience name for target.
+calcHist_Demo: CMakeFiles/calcHist_Demo.dir/rule
+
+.PHONY : calcHist_Demo
+
+# clean rule for target.
+CMakeFiles/calcHist_Demo.dir/clean:
+	$(MAKE) -f CMakeFiles/calcHist_Demo.dir/build.make CMakeFiles/calcHist_Demo.dir/clean
+.PHONY : CMakeFiles/calcHist_Demo.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/calcHist_Demo.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/slider_mouse-opcv.dir
+
+# All Build rule for target.
+CMakeFiles/slider_mouse-opcv.dir/all:
+	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/depend
+	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=31,32 "Built target slider_mouse-opcv"
+.PHONY : CMakeFiles/slider_mouse-opcv.dir/all
+
+# Include target in all.
+all: CMakeFiles/slider_mouse-opcv.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/slider_mouse-opcv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/slider_mouse-opcv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
+.PHONY : CMakeFiles/slider_mouse-opcv.dir/rule
+
+# Convenience name for target.
+slider_mouse-opcv: CMakeFiles/slider_mouse-opcv.dir/rule
+
+.PHONY : slider_mouse-opcv
+
+# clean rule for target.
+CMakeFiles/slider_mouse-opcv.dir/clean:
+	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/clean
+.PHONY : CMakeFiles/slider_mouse-opcv.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/slider_mouse-opcv.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/hcircle_trsf.dir
+
+# All Build rule for target.
+CMakeFiles/hcircle_trsf.dir/all:
+	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/depend
+	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=13,14 "Built target hcircle_trsf"
+.PHONY : CMakeFiles/hcircle_trsf.dir/all
+
+# Include target in all.
+all: CMakeFiles/hcircle_trsf.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/hcircle_trsf.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hcircle_trsf.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
+.PHONY : CMakeFiles/hcircle_trsf.dir/rule
+
+# Convenience name for target.
+hcircle_trsf: CMakeFiles/hcircle_trsf.dir/rule
+
+.PHONY : hcircle_trsf
+
+# clean rule for target.
+CMakeFiles/hcircle_trsf.dir/clean:
+	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/clean
+.PHONY : CMakeFiles/hcircle_trsf.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/hcircle_trsf.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/hough-circle.dir
+
+# All Build rule for target.
+CMakeFiles/hough-circle.dir/all:
+	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/depend
+	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=15,16 "Built target hough-circle"
+.PHONY : CMakeFiles/hough-circle.dir/all
+
+# Include target in all.
+all: CMakeFiles/hough-circle.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/hough-circle.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hough-circle.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
+.PHONY : CMakeFiles/hough-circle.dir/rule
+
+# Convenience name for target.
+hough-circle: CMakeFiles/hough-circle.dir/rule
+
+.PHONY : hough-circle
+
+# clean rule for target.
+CMakeFiles/hough-circle.dir/clean:
+	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/clean
+.PHONY : CMakeFiles/hough-circle.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/hough-circle.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main.dir
+
+# All Build rule for target.
+CMakeFiles/main.dir/all:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=17,18 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
+
+# Include target in all.
+all: CMakeFiles/main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
+.PHONY : CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+CMakeFiles/main.dir/clean:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/min_max-filter.dir
 
 # All Build rule for target.
 CMakeFiles/min_max-filter.dir/all:
 	$(MAKE) -f CMakeFiles/min_max-filter.dir/build.make CMakeFiles/min_max-filter.dir/depend
 	$(MAKE) -f CMakeFiles/min_max-filter.dir/build.make CMakeFiles/min_max-filter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=15,16 "Built target min_max-filter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=19,20 "Built target min_max-filter"
 .PHONY : CMakeFiles/min_max-filter.dir/all
 
 # Include target in all.
@@ -399,7 +510,7 @@ clean: CMakeFiles/min_max-filter.dir/clean
 CMakeFiles/prototype.dir/all:
 	$(MAKE) -f CMakeFiles/prototype.dir/build.make CMakeFiles/prototype.dir/depend
 	$(MAKE) -f CMakeFiles/prototype.dir/build.make CMakeFiles/prototype.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=19,20 "Built target prototype"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=23,24 "Built target prototype"
 .PHONY : CMakeFiles/prototype.dir/all
 
 # Include target in all.
@@ -436,7 +547,7 @@ clean: CMakeFiles/prototype.dir/clean
 CMakeFiles/motion-filter.dir/all:
 	$(MAKE) -f CMakeFiles/motion-filter.dir/build.make CMakeFiles/motion-filter.dir/depend
 	$(MAKE) -f CMakeFiles/motion-filter.dir/build.make CMakeFiles/motion-filter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=17,18 "Built target motion-filter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=21,22 "Built target motion-filter"
 .PHONY : CMakeFiles/motion-filter.dir/all
 
 # Include target in all.
@@ -473,7 +584,7 @@ clean: CMakeFiles/motion-filter.dir/clean
 CMakeFiles/pupil-detection.dir/all:
 	$(MAKE) -f CMakeFiles/pupil-detection.dir/build.make CMakeFiles/pupil-detection.dir/depend
 	$(MAKE) -f CMakeFiles/pupil-detection.dir/build.make CMakeFiles/pupil-detection.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=21,22 "Built target pupil-detection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=25,26 "Built target pupil-detection"
 .PHONY : CMakeFiles/pupil-detection.dir/all
 
 # Include target in all.
@@ -504,50 +615,13 @@ clean: CMakeFiles/pupil-detection.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/readimg.dir
-
-# All Build rule for target.
-CMakeFiles/readimg.dir/all:
-	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/depend
-	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=23,24 "Built target readimg"
-.PHONY : CMakeFiles/readimg.dir/all
-
-# Include target in all.
-all: CMakeFiles/readimg.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/readimg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/readimg.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles 0
-.PHONY : CMakeFiles/readimg.dir/rule
-
-# Convenience name for target.
-readimg: CMakeFiles/readimg.dir/rule
-
-.PHONY : readimg
-
-# clean rule for target.
-CMakeFiles/readimg.dir/clean:
-	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/clean
-.PHONY : CMakeFiles/readimg.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/readimg.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/edge_detection.dir
 
 # All Build rule for target.
 CMakeFiles/edge_detection.dir/all:
 	$(MAKE) -f CMakeFiles/edge_detection.dir/build.make CMakeFiles/edge_detection.dir/depend
 	$(MAKE) -f CMakeFiles/edge_detection.dir/build.make CMakeFiles/edge_detection.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=3,4 "Built target edge_detection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=5,6 "Built target edge_detection"
 .PHONY : CMakeFiles/edge_detection.dir/all
 
 # Include target in all.
@@ -584,7 +658,7 @@ clean: CMakeFiles/edge_detection.dir/clean
 CMakeFiles/remove-background.dir/all:
 	$(MAKE) -f CMakeFiles/remove-background.dir/build.make CMakeFiles/remove-background.dir/depend
 	$(MAKE) -f CMakeFiles/remove-background.dir/build.make CMakeFiles/remove-background.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=25,26 "Built target remove-background"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles --progress-num=29,30 "Built target remove-background"
 .PHONY : CMakeFiles/remove-background.dir/all
 
 # Include target in all.

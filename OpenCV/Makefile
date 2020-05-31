@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,30 +111,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hough-circle
+# Target rules for targets named ui
 
 # Build rule for target.
-hough-circle: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hough-circle
-.PHONY : hough-circle
+ui: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ui
+.PHONY : ui
 
 # fast build rule for target.
-hough-circle/fast:
-	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/build
-.PHONY : hough-circle/fast
+ui/fast:
+	$(MAKE) -f CMakeFiles/ui.dir/build.make CMakeFiles/ui.dir/build
+.PHONY : ui/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named fourier_transform
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+fourier_transform: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fourier_transform
+.PHONY : fourier_transform
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+fourier_transform/fast:
+	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/build
+.PHONY : fourier_transform/fast
+
+#=============================================================================
+# Target rules for targets named readimg
+
+# Build rule for target.
+readimg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 readimg
+.PHONY : readimg
+
+# fast build rule for target.
+readimg/fast:
+	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/build
+.PHONY : readimg/fast
 
 #=============================================================================
 # Target rules for targets named find_n_draw_contour
@@ -148,45 +161,6 @@ find_n_draw_contour: cmake_check_build_system
 find_n_draw_contour/fast:
 	$(MAKE) -f CMakeFiles/find_n_draw_contour.dir/build.make CMakeFiles/find_n_draw_contour.dir/build
 .PHONY : find_n_draw_contour/fast
-
-#=============================================================================
-# Target rules for targets named hcircle_trsf
-
-# Build rule for target.
-hcircle_trsf: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hcircle_trsf
-.PHONY : hcircle_trsf
-
-# fast build rule for target.
-hcircle_trsf/fast:
-	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/build
-.PHONY : hcircle_trsf/fast
-
-#=============================================================================
-# Target rules for targets named slider_mouse-opcv
-
-# Build rule for target.
-slider_mouse-opcv: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 slider_mouse-opcv
-.PHONY : slider_mouse-opcv
-
-# fast build rule for target.
-slider_mouse-opcv/fast:
-	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/build
-.PHONY : slider_mouse-opcv/fast
-
-#=============================================================================
-# Target rules for targets named ui
-
-# Build rule for target.
-ui: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ui
-.PHONY : ui
-
-# fast build rule for target.
-ui/fast:
-	$(MAKE) -f CMakeFiles/ui.dir/build.make CMakeFiles/ui.dir/build
-.PHONY : ui/fast
 
 #=============================================================================
 # Target rules for targets named eyes-detection
@@ -213,6 +187,71 @@ conv2gray: cmake_check_build_system
 conv2gray/fast:
 	$(MAKE) -f CMakeFiles/conv2gray.dir/build.make CMakeFiles/conv2gray.dir/build
 .PHONY : conv2gray/fast
+
+#=============================================================================
+# Target rules for targets named calcHist_Demo
+
+# Build rule for target.
+calcHist_Demo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 calcHist_Demo
+.PHONY : calcHist_Demo
+
+# fast build rule for target.
+calcHist_Demo/fast:
+	$(MAKE) -f CMakeFiles/calcHist_Demo.dir/build.make CMakeFiles/calcHist_Demo.dir/build
+.PHONY : calcHist_Demo/fast
+
+#=============================================================================
+# Target rules for targets named slider_mouse-opcv
+
+# Build rule for target.
+slider_mouse-opcv: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 slider_mouse-opcv
+.PHONY : slider_mouse-opcv
+
+# fast build rule for target.
+slider_mouse-opcv/fast:
+	$(MAKE) -f CMakeFiles/slider_mouse-opcv.dir/build.make CMakeFiles/slider_mouse-opcv.dir/build
+.PHONY : slider_mouse-opcv/fast
+
+#=============================================================================
+# Target rules for targets named hcircle_trsf
+
+# Build rule for target.
+hcircle_trsf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hcircle_trsf
+.PHONY : hcircle_trsf
+
+# fast build rule for target.
+hcircle_trsf/fast:
+	$(MAKE) -f CMakeFiles/hcircle_trsf.dir/build.make CMakeFiles/hcircle_trsf.dir/build
+.PHONY : hcircle_trsf/fast
+
+#=============================================================================
+# Target rules for targets named hough-circle
+
+# Build rule for target.
+hough-circle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hough-circle
+.PHONY : hough-circle
+
+# fast build rule for target.
+hough-circle/fast:
+	$(MAKE) -f CMakeFiles/hough-circle.dir/build.make CMakeFiles/hough-circle.dir/build
+.PHONY : hough-circle/fast
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
 # Target rules for targets named min_max-filter
@@ -267,19 +306,6 @@ pupil-detection/fast:
 .PHONY : pupil-detection/fast
 
 #=============================================================================
-# Target rules for targets named readimg
-
-# Build rule for target.
-readimg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 readimg
-.PHONY : readimg
-
-# fast build rule for target.
-readimg/fast:
-	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/build
-.PHONY : readimg/fast
-
-#=============================================================================
 # Target rules for targets named edge_detection
 
 # Build rule for target.
@@ -304,6 +330,33 @@ remove-background: cmake_check_build_system
 remove-background/fast:
 	$(MAKE) -f CMakeFiles/remove-background.dir/build.make CMakeFiles/remove-background.dir/build
 .PHONY : remove-background/fast
+
+calcHist_Demo.o: calcHist_Demo.cpp.o
+
+.PHONY : calcHist_Demo.o
+
+# target to build an object file
+calcHist_Demo.cpp.o:
+	$(MAKE) -f CMakeFiles/calcHist_Demo.dir/build.make CMakeFiles/calcHist_Demo.dir/calcHist_Demo.cpp.o
+.PHONY : calcHist_Demo.cpp.o
+
+calcHist_Demo.i: calcHist_Demo.cpp.i
+
+.PHONY : calcHist_Demo.i
+
+# target to preprocess a source file
+calcHist_Demo.cpp.i:
+	$(MAKE) -f CMakeFiles/calcHist_Demo.dir/build.make CMakeFiles/calcHist_Demo.dir/calcHist_Demo.cpp.i
+.PHONY : calcHist_Demo.cpp.i
+
+calcHist_Demo.s: calcHist_Demo.cpp.s
+
+.PHONY : calcHist_Demo.s
+
+# target to generate assembly for a file
+calcHist_Demo.cpp.s:
+	$(MAKE) -f CMakeFiles/calcHist_Demo.dir/build.make CMakeFiles/calcHist_Demo.dir/calcHist_Demo.cpp.s
+.PHONY : calcHist_Demo.cpp.s
 
 conv2gray.o: conv2gray.cpp.o
 
@@ -412,6 +465,33 @@ find_n_draw_contour.s: find_n_draw_contour.cpp.s
 find_n_draw_contour.cpp.s:
 	$(MAKE) -f CMakeFiles/find_n_draw_contour.dir/build.make CMakeFiles/find_n_draw_contour.dir/find_n_draw_contour.cpp.s
 .PHONY : find_n_draw_contour.cpp.s
+
+fourier_transform.o: fourier_transform.cpp.o
+
+.PHONY : fourier_transform.o
+
+# target to build an object file
+fourier_transform.cpp.o:
+	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/fourier_transform.cpp.o
+.PHONY : fourier_transform.cpp.o
+
+fourier_transform.i: fourier_transform.cpp.i
+
+.PHONY : fourier_transform.i
+
+# target to preprocess a source file
+fourier_transform.cpp.i:
+	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/fourier_transform.cpp.i
+.PHONY : fourier_transform.cpp.i
+
+fourier_transform.s: fourier_transform.cpp.s
+
+.PHONY : fourier_transform.s
+
+# target to generate assembly for a file
+fourier_transform.cpp.s:
+	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/fourier_transform.cpp.s
+.PHONY : fourier_transform.cpp.s
 
 hcircle_trsf.o: hcircle_trsf.cpp.o
 
@@ -716,23 +796,28 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... hough-circle"
-	@echo "... main"
+	@echo "... edit_cache"
+	@echo "... ui"
+	@echo "... fourier_transform"
+	@echo "... readimg"
 	@echo "... rebuild_cache"
 	@echo "... find_n_draw_contour"
-	@echo "... hcircle_trsf"
-	@echo "... slider_mouse-opcv"
-	@echo "... ui"
 	@echo "... eyes-detection"
 	@echo "... conv2gray"
+	@echo "... calcHist_Demo"
+	@echo "... slider_mouse-opcv"
+	@echo "... hcircle_trsf"
+	@echo "... hough-circle"
+	@echo "... main"
 	@echo "... min_max-filter"
 	@echo "... prototype"
-	@echo "... edit_cache"
 	@echo "... motion-filter"
 	@echo "... pupil-detection"
-	@echo "... readimg"
 	@echo "... edge_detection"
 	@echo "... remove-background"
+	@echo "... calcHist_Demo.o"
+	@echo "... calcHist_Demo.i"
+	@echo "... calcHist_Demo.s"
 	@echo "... conv2gray.o"
 	@echo "... conv2gray.i"
 	@echo "... conv2gray.s"
@@ -745,6 +830,9 @@ help:
 	@echo "... find_n_draw_contour.o"
 	@echo "... find_n_draw_contour.i"
 	@echo "... find_n_draw_contour.s"
+	@echo "... fourier_transform.o"
+	@echo "... fourier_transform.i"
+	@echo "... fourier_transform.s"
 	@echo "... hcircle_trsf.o"
 	@echo "... hcircle_trsf.i"
 	@echo "... hcircle_trsf.s"

@@ -6,6 +6,7 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 
+void drawingAxis(cv::Mat frame, cv::Point2f center);
 bool compareContourAreas(std::vector<cv::Point> contour1, std::vector<cv::Point> contour2){
     double i = std::fabs(cv::contourArea(cv::Mat(contour1)));
     double j = std::fabs(cv::contourArea(cv::Mat(contour2)));
@@ -14,7 +15,7 @@ bool compareContourAreas(std::vector<cv::Point> contour1, std::vector<cv::Point>
 
 int main()
 {
-    int rows, cols;
+    int height, width;
     cv::VideoCapture cap;
     cap.open("data/eye_movement_cut.mkv");
 
@@ -34,8 +35,8 @@ int main()
             break;
         }
 
-        rows = frame.rows;
-        cols = frame.cols;
+        height = frame.rows;
+        width = frame.cols;
 
         cv::cvtColor(frame, gray_frame, cv::COLOR_BGR2GRAY);
         cv::GaussianBlur(gray_frame, gray_frame, cv::Size(7, 7), 0, 0);
@@ -61,22 +62,35 @@ int main()
         }
         // Start Drawing Contour Over the frame
         for (size_t i = 0; i < contours.size(); i++){
-            cv::drawContours(
-                        frame, 
-                        contours, 
-                        int(i), 
-                        cv::Scalar(0, 255, 0)
-                    );
-            cv::circle(frame, centers[i], (int)radius[i], cv::Scalar(0, 255, 0), 2);
+            /* cv::drawContours( */
+            /*             frame, */ 
+            /*             contours, */ 
+            /*             int(i), */ 
+            /*             cv::Scalar(0, 255, 0) */
+            /*         ); */
+            cv::circle(frame, centers[i], (int)radius[i], cv::Scalar(0, 0, 255), 2);
         }
 
         // sort contours
         std::sort(contours.begin(), contours.end(), compareContourAreas);
         // grab the beggest contour
-        std::vector<cv::Point> biggestContour = contours[contours.size()-1];
+        int bContourPos = contours.size()-1;
+        std::vector<cv::Point> biggestContour = contours[bContourPos];
+
+        auto bCenter = centers[bContourPos];
+        int thickness = 2;
+        // Vertical line passing through the center of the biggestContour
+        cv::Point startP = cv::Point(bCenter.x, 0);
+        cv::Point endP = cv::Point(bCenter.x, height);
+        cv::line(frame, startP, endP, cv::Scalar(0,255,0), thickness);
+
+        // Vertical line passing through the center of the biggestContour
+        startP = cv::Point(0, bCenter.y);
+        endP = cv::Point(width, bCenter.y);
+        cv::line(frame, startP, endP, cv::Scalar(0,255,0), thickness);
 
         // Output the frame to the screen
-        cv::imshow("gray_frame", ret);
+        /* cv::imshow("gray_frame", ret); */
         cv::imshow("Live", frame);
         if (cv::waitKey(5) >= 0)
             break;
