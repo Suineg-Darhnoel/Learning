@@ -1,7 +1,5 @@
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/edit_cache.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/ui.dir
-/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/fourier_transform.dir
-/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/readimg.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/rebuild_cache.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/find_n_draw_contour.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/eyes-detection.dir
@@ -9,11 +7,14 @@
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/calcHist_Demo.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/slider_mouse-opcv.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/hcircle_trsf.dir
+/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/fourier_transform.dir
+/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/readimg.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/hough-circle.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/main.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/min_max-filter.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/prototype.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/motion-filter.dir
+/mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/blend_imgs.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/pupil-detection.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/edge_detection.dir
 /mnt/d/ws/d/UbuntuWSL/Learning/OpenCV/CMakeFiles/remove-background.dir

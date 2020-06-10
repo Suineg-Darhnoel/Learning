@@ -124,32 +124,6 @@ ui/fast:
 .PHONY : ui/fast
 
 #=============================================================================
-# Target rules for targets named fourier_transform
-
-# Build rule for target.
-fourier_transform: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fourier_transform
-.PHONY : fourier_transform
-
-# fast build rule for target.
-fourier_transform/fast:
-	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/build
-.PHONY : fourier_transform/fast
-
-#=============================================================================
-# Target rules for targets named readimg
-
-# Build rule for target.
-readimg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 readimg
-.PHONY : readimg
-
-# fast build rule for target.
-readimg/fast:
-	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/build
-.PHONY : readimg/fast
-
-#=============================================================================
 # Target rules for targets named find_n_draw_contour
 
 # Build rule for target.
@@ -228,6 +202,32 @@ hcircle_trsf/fast:
 .PHONY : hcircle_trsf/fast
 
 #=============================================================================
+# Target rules for targets named fourier_transform
+
+# Build rule for target.
+fourier_transform: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fourier_transform
+.PHONY : fourier_transform
+
+# fast build rule for target.
+fourier_transform/fast:
+	$(MAKE) -f CMakeFiles/fourier_transform.dir/build.make CMakeFiles/fourier_transform.dir/build
+.PHONY : fourier_transform/fast
+
+#=============================================================================
+# Target rules for targets named readimg
+
+# Build rule for target.
+readimg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 readimg
+.PHONY : readimg
+
+# fast build rule for target.
+readimg/fast:
+	$(MAKE) -f CMakeFiles/readimg.dir/build.make CMakeFiles/readimg.dir/build
+.PHONY : readimg/fast
+
+#=============================================================================
 # Target rules for targets named hough-circle
 
 # Build rule for target.
@@ -293,6 +293,19 @@ motion-filter/fast:
 .PHONY : motion-filter/fast
 
 #=============================================================================
+# Target rules for targets named blend_imgs
+
+# Build rule for target.
+blend_imgs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 blend_imgs
+.PHONY : blend_imgs
+
+# fast build rule for target.
+blend_imgs/fast:
+	$(MAKE) -f CMakeFiles/blend_imgs.dir/build.make CMakeFiles/blend_imgs.dir/build
+.PHONY : blend_imgs/fast
+
+#=============================================================================
 # Target rules for targets named pupil-detection
 
 # Build rule for target.
@@ -330,6 +343,33 @@ remove-background: cmake_check_build_system
 remove-background/fast:
 	$(MAKE) -f CMakeFiles/remove-background.dir/build.make CMakeFiles/remove-background.dir/build
 .PHONY : remove-background/fast
+
+blend_imgs.o: blend_imgs.cpp.o
+
+.PHONY : blend_imgs.o
+
+# target to build an object file
+blend_imgs.cpp.o:
+	$(MAKE) -f CMakeFiles/blend_imgs.dir/build.make CMakeFiles/blend_imgs.dir/blend_imgs.cpp.o
+.PHONY : blend_imgs.cpp.o
+
+blend_imgs.i: blend_imgs.cpp.i
+
+.PHONY : blend_imgs.i
+
+# target to preprocess a source file
+blend_imgs.cpp.i:
+	$(MAKE) -f CMakeFiles/blend_imgs.dir/build.make CMakeFiles/blend_imgs.dir/blend_imgs.cpp.i
+.PHONY : blend_imgs.cpp.i
+
+blend_imgs.s: blend_imgs.cpp.s
+
+.PHONY : blend_imgs.s
+
+# target to generate assembly for a file
+blend_imgs.cpp.s:
+	$(MAKE) -f CMakeFiles/blend_imgs.dir/build.make CMakeFiles/blend_imgs.dir/blend_imgs.cpp.s
+.PHONY : blend_imgs.cpp.s
 
 calcHist_Demo.o: calcHist_Demo.cpp.o
 
@@ -798,8 +838,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... ui"
-	@echo "... fourier_transform"
-	@echo "... readimg"
 	@echo "... rebuild_cache"
 	@echo "... find_n_draw_contour"
 	@echo "... eyes-detection"
@@ -807,14 +845,20 @@ help:
 	@echo "... calcHist_Demo"
 	@echo "... slider_mouse-opcv"
 	@echo "... hcircle_trsf"
+	@echo "... fourier_transform"
+	@echo "... readimg"
 	@echo "... hough-circle"
 	@echo "... main"
 	@echo "... min_max-filter"
 	@echo "... prototype"
 	@echo "... motion-filter"
+	@echo "... blend_imgs"
 	@echo "... pupil-detection"
 	@echo "... edge_detection"
 	@echo "... remove-background"
+	@echo "... blend_imgs.o"
+	@echo "... blend_imgs.i"
+	@echo "... blend_imgs.s"
 	@echo "... calcHist_Demo.o"
 	@echo "... calcHist_Demo.i"
 	@echo "... calcHist_Demo.s"

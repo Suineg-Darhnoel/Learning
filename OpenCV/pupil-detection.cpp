@@ -1,7 +1,9 @@
 #include <iostream>
+#include <fstream> // ofstream, ifstream
 #include <algorithm>
 #include <vector>
-
+#include <chrono> // high_resolution_clock
+// OPENCV LIBRARY
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
@@ -12,6 +14,15 @@ bool compareContourAreas(std::vector<cv::Point> contour1, std::vector<cv::Point>
     double j = std::fabs(cv::contourArea(cv::Mat(contour2)));
     return (i < j);
 }
+
+bool fexists(std::string& filename)
+{
+    std::ifstream test_file(filename);
+    return bool(test_file);
+}
+
+double elapsed_time;
+int time_cnt = 0;
 
 int main()
 {
@@ -25,10 +36,17 @@ int main()
     std::vector<std::vector<cv::Point> > contours;
     std::vector<cv::Vec4i> hierarchy;
 
-
     double thresh;
+    std::string file_name = "pupil_test";
+    std::ofstream log_file;
+    if (!fexists(file_name)){
+        log_file.open(file_name);
+    }
+
+
     for (;;){
         // Read each frame
+        auto start_time = std::chrono::high_resolution_clock::now();
         cap.read(frame);
         if (frame.empty()){
             std::cerr << "ERROR! blank frame grabbed\n";
@@ -62,12 +80,6 @@ int main()
         }
         // Start Drawing Contour Over the frame
         for (size_t i = 0; i < contours.size(); i++){
-            /* cv::drawContours( */
-            /*             frame, */ 
-            /*             contours, */ 
-            /*             int(i), */ 
-            /*             cv::Scalar(0, 255, 0) */
-            /*         ); */
             cv::circle(frame, centers[i], (int)radius[i], cv::Scalar(0, 0, 255), 2);
         }
 
@@ -92,9 +104,25 @@ int main()
         // Output the frame to the screen
         /* cv::imshow("gray_frame", ret); */
         cv::imshow("Live", frame);
+
+        auto end_time = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> time_span = end_time - start_time;
+        // end of time measurement
+        elapsed_time += time_span.count();
+        time_cnt += 1;
+
+        // Show average elapsed time every 100 frames pass
+        if (time_cnt % 100 == 0)
+        {
+            std::string statement = "Current Average Time Elapsed: " + std::to_string(elapsed_time/time_cnt) +  " seconds\n";
+            std::cout << statement;
+            log_file << statement;
+        }
+
         if (cv::waitKey(5) >= 0)
             break;
     }
+    log_file.close();
     cv::destroyAllWindows();
     return 0;
 }
