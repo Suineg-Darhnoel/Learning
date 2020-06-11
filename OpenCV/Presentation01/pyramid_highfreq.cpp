@@ -2,6 +2,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#include <cassert>
 
 cv::Mat bilinear_interpolation(cv::Mat img, double xScaleFactor=1.0, double yScaleFactor=1.0)
 {
@@ -44,6 +45,24 @@ cv::Mat bilinear_interpolation(cv::Mat img, double xScaleFactor=1.0, double ySca
     return out;
 }
 
+cv::Mat extract_highFreq(cv::Mat img1, cv::Mat img2)
+{
+    assert(img1.size() == img2.size());
+
+    int img_h = img1.rows;
+    int img_w = img1.cols;
+    cv::Mat out = cv::Mat::zeros(img_h, img_w, CV_8UC1);
+
+    for (int y = 0; y < img_h; y++){
+        for (int x = 0; x < img_w; x++){
+            out.at<uchar>(y, x) = std::abs(
+                        img1.at<uchar>(y, x) - img2.at<uchar>(y, x)
+                    );
+        }
+    }
+    return out;
+}
+
 int main()
 {
     cv::Mat img = cv::imread("../data/imori.jpg");
@@ -55,12 +74,10 @@ int main()
 
     // 0.5倍したものを2倍する
     cv::Mat out2 = bilinear_interpolation(out1, 2, 2);
-    /* cv::imshow("original grayimg", gimg); */
-    /* cv::imshow("out1", out1); */
-    /* cv::imshow("out2", out2); */
 
-    /* cv::imwrite("half_bilinear.png", out1); */
-    /* cv::imwrite("half_bilinear_zoom.png", out2); */
+    // 高周波成分の抽出
+    cv::Mat out = extract_highFreq(out2, gimg);
+    cv::imshow("out", out);
 
     cv::waitKey(0);
     cv::destroyAllWindows();

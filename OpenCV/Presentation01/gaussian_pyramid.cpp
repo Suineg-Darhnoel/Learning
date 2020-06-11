@@ -50,17 +50,18 @@ int main()
     cv::Mat gimg;
     cv::cvtColor(img, gimg, cv::COLOR_BGR2GRAY);
 
-    // imori.jpg を0.5倍する
-    cv::Mat out1 = bilinear_interpolation(gimg, 0.5, 0.5);
+    // Gausian Pyramid
+    double scale = 1;
+    for (int i = 0; i < 5; i++){
+        scale *= 0.5;
+        cv::Mat tmp_img = bilinear_interpolation(gimg, scale, scale);
+        int timg_h = tmp_img.rows;
+        int timg_w = tmp_img.cols;
 
-    // 0.5倍したものを2倍する
-    cv::Mat out2 = bilinear_interpolation(out1, 2, 2);
-    /* cv::imshow("original grayimg", gimg); */
-    /* cv::imshow("out1", out1); */
-    /* cv::imshow("out2", out2); */
+        std::string name = "Results/out" + std::to_string(timg_h) + "x" + std::to_string(timg_w) + ".png";
+        cv::imwrite(name, tmp_img);
+    }
 
-    /* cv::imwrite("half_bilinear.png", out1); */
-    /* cv::imwrite("half_bilinear_zoom.png", out2); */
 
     cv::waitKey(0);
     cv::destroyAllWindows();
