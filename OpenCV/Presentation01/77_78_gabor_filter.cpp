@@ -4,7 +4,7 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-cv::Mat visualize_gabor(int K=111, double A=0, double g=1.2, double s=10, int l=10, int p=10)
+cv::Mat getGaborKernel(int K=111, double A=0, double g=1.2, double s=10, int l=10, int p=10)
 {
     // x' = cosA * x + sinA * y
     // y' = -sinA * x + cosA * y
@@ -39,7 +39,7 @@ cv::Mat visualize_gabor(int K=111, double A=0, double g=1.2, double s=10, int l=
     double minVal, maxVal;
     cv::minMaxLoc(out, &minVal, &maxVal);
     double range = maxVal - minVal;
-    double unit = range/256;
+    double unit = range/255;
 
     cv::Mat out2 = cv::Mat::zeros(K, K, CV_8UC1);
 
@@ -55,19 +55,22 @@ cv::Mat visualize_gabor(int K=111, double A=0, double g=1.2, double s=10, int l=
 
 int main()
 {
-    cv::Mat box1 = visualize_gabor(111);
-    cv::Mat box2 = visualize_gabor(111, 45);
-    cv::Mat box3 = visualize_gabor(111, 90);
-    cv::Mat box4 = visualize_gabor(111, 135);
-    cv::imshow("gabor_0", box1);
-    cv::imshow("gabor_45", box2);
-    cv::imshow("gabor_90", box3);
-    cv::imshow("gabor_135", box4);
+    std::vector<cv::Mat> kernels;
 
-    cv::imwrite("Results/gabor_0.png", box1);
-    cv::imwrite("Results/gabor_45.png", box2);
-    cv::imwrite("Results/gabor_90.png", box3);
-    cv::imwrite("Results/gabor_135.png", box4);
+    // generate GaborKernel with different angles
+    for (int angle = 0; angle <= 45*3; angle +=45)
+        kernels.push_back(getGaborKernel(111, angle));
+
+    for (int i = 0; i < (int)kernels.size(); i++){
+        cv::imshow("gabor_"+std::to_string(i), kernels.at(i));
+    }
+
+    // write outputs to disk
+    for (int i = 0; i < (int)kernels.size(); i++){
+        std::string name = "Results/gabor_" + std::to_string(i) + ".png";
+        cv::imwrite(name, kernels.at(i));
+    }
+
     cv::waitKey(0);
     cv::destroyAllWindows();
     return 0;
