@@ -248,4 +248,5 @@ cv::Mat opening(cv::Mat mask, int N)
     out = dilate(out, N);
     return out;
 }
+
 #endif
