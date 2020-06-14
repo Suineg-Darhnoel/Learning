@@ -18,13 +18,13 @@ int main()
     cv::imshow("original img", img);
     cv::imshow("mask", mask);
 
-    cv::imwrite("Results/mask_img.png", mask);
-    cv::imwrite("Results/inv_mask_img.png", (255-mask));
+    /* cv::imwrite("Results/mask_img.png", mask); */
+    /* cv::imwrite("Results/inv_mask_img.png", (255-mask)); */
 
     out = setMask(img, mask);
 
     cv::imshow("masked img", out);
-    cv::imwrite("Results/masked_img.png", out);
+    /* cv::imwrite("Results/masked_img.png", out); */
 
     cv::waitKey(0);
     cv::destroyAllWindows();

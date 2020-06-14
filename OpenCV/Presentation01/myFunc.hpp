@@ -66,10 +66,10 @@ cv::Mat getMask(cv::Mat hsv, int hueLow=180, int hueHigh=260)
 
     hueLow = std::fmax(0, hueLow);
     hueHigh = std::fmin(hueHigh, 260);
-    double h;
+    float h;
     for (int y = 0; y < height; y++){
         for (int x = 0; x < width; x++){
-            h = (double)hsv.at<cv::Vec3f>(y, x)[0];
+            h = (float)hsv.at<cv::Vec3f>(y, x)[0];
             if (h <= hueHigh && h >= hueLow){
                 mask.at<uchar>(y, x) = 255;
             }
@@ -83,16 +83,119 @@ cv::Mat setMask(cv::Mat img, cv::Mat _mask){
     cv::Mat mask = (255 - _mask)/255;
     int height = img.rows;
     int width = img.cols;
-    cv::Mat out = img.clone();
+
+    cv::Mat out = cv::Mat::zeros(height, width, CV_8UC3);
 
     for (int y = 0; y < height; y++){
         for (int x = 0; x < width; x++){
             // loop through BGR
-            for (int i = 0; i < 3; i++)
-                out.at<cv::Vec3b>(y, x)[i] = mask.at<uchar>(y, x) * out.at<cv::Vec3b>(y, x)[i];
+            for (int i = 0; i < 3; i++){
+                uchar mask_val = mask.at<uchar>(y, x);
+                out.at<cv::Vec3b>(y, x)[i] = mask_val * img.at<cv::Vec3b>(y, x)[i];
+            }
         }
     }
 
+    return out;
+}
+
+// Dilation --> Add pixels
+// Algorithm: I(x, y-1), I(x-1, y), I(x+1, y), I(x, y+1)
+// If one of the pixels is 255, I(x, y) <- 255
+cv::Mat dilate(cv::Mat& imgBin, int N)
+{
+    int img_h = imgBin.rows;
+    int img_w = imgBin.cols;
+
+    cv::Mat out = imgBin.clone();
+
+    for (int i = 0; i < N; i++){
+        // loop through each pixel
+        cv::Mat tmpImg = out.clone();
+        for (int y = 0; y < img_h; y++){
+            for (int x = 0; x < img_w; x++){
+                if ((x > 0) && (tmpImg.at<uchar>(y, x-1) == 0)){
+                    out.at<uchar>(y, x) = 0;
+                    continue;
+                }
+
+                if ((y > 0) && (tmpImg.at<uchar>(y-1, x) == 0)){
+                    out.at<uchar>(y, x) = 0;
+                    continue;
+                }
+
+                if ((x < img_w - 1) && (tmpImg.at<uchar>(y, x+1) == 0)){
+                    out.at<uchar>(y, x) = 0;
+                    continue;
+                }
+
+                if ((y < img_h - 1) && (tmpImg.at<uchar>(y+1, x) == 0)){
+                    out.at<uchar>(y, x) = 0;
+                    continue;
+                }
+            }
+        }
+    }
+
+    return out;
+}
+
+// Erosion --> Remove pixels
+// Algorithm: I(x, y-1), I(x-1, y), I(x+1, y), I(x, y+1)
+// If one of the pixels is 0, I(x, y) <- 0
+cv::Mat erode(cv::Mat& imgBin, int N)
+{
+    int img_h = imgBin.rows;
+    int img_w = imgBin.cols;
+
+    cv::Mat out = imgBin.clone();
+
+    for (int i = 0; i < N; i++){
+        // loop through each pixel
+        cv::Mat tmpImg = out.clone();
+        for (int y = 0; y < img_h; y++){
+            for (int x = 0; x < img_w; x++){
+                if ((x > 0) && (tmpImg.at<uchar>(y, x-1) == 255)){
+                    out.at<uchar>(y, x) = 255;
+                    continue;
+                }
+
+                if ((y > 0) && (tmpImg.at<uchar>(y-1, x) == 255)){
+                    out.at<uchar>(y, x) = 255;
+                    continue;
+                }
+
+                if ((x < img_w - 1) && (tmpImg.at<uchar>(y, x+1) == 255)){
+                    out.at<uchar>(y, x) = 255;
+                    continue;
+                }
+
+                if ((y < img_h - 1) && (tmpImg.at<uchar>(y+1, x) == 255)){
+                    out.at<uchar>(y, x) = 255;
+                    continue;
+                }
+            }
+        }
+    }
+
+    return out;
+}
+
+// Dilate --> Erode
+cv::Mat closing(cv::Mat mask, int N)
+{
+    cv::Mat out;
+    out = dilate(mask, N);
+    out = erode(out, N);
+    return out;
+}
+
+// Erode --> Dilate
+cv::Mat opening(cv::Mat mask, int N)
+{
+    cv::Mat out;
+    out = erode(mask, N);
+    out = dilate(out, N);
     return out;
 }
 
@@ -153,100 +256,6 @@ cv::Mat OtsuBin(cv::Mat& grayImg)
     }
 
     return binImg;
-}
-
-// Dilation
-cv::Mat dilate(cv::Mat& imgBin, int N)
-{
-    int img_h = imgBin.rows;
-    int img_w = imgBin.cols;
-
-    cv::Mat out = imgBin.clone();
-
-    for (int i = 0; i < N; i++){
-        // loop through each pixel
-        cv::Mat tmpImg = out.clone();
-        for (int y = 0; y < img_h; y++){
-            for (int x = 0; x < img_w; x++){
-                if ((x > 0) && (tmpImg.at<uchar>(y, x-1) == 0)){
-                    out.at<uchar>(y, x) = 0;
-                    continue;
-                }
-
-                if ((y > 0) && (tmpImg.at<uchar>(y-1, x) == 0)){
-                    out.at<uchar>(y, x) = 0;
-                    continue;
-                }
-
-                if ((x < img_w - 1) && (tmpImg.at<uchar>(y, x+1) == 0)){
-                    out.at<uchar>(y, x) = 0;
-                    continue;
-                }
-
-                if ((y < img_h - 1) && (tmpImg.at<uchar>(y+1, x) == 0)){
-                    out.at<uchar>(y, x) = 0;
-                    continue;
-                }
-            }
-        }
-    }
-
-    return out;
-}
-
-// Erosion
-cv::Mat erode(cv::Mat& imgBin, int N)
-{
-    int img_h = imgBin.rows;
-    int img_w = imgBin.cols;
-
-    cv::Mat out = imgBin.clone();
-
-    for (int i = 0; i < N; i++){
-        // loop through each pixel
-        cv::Mat tmpImg = out.clone();
-        for (int y = 0; y < img_h; y++){
-            for (int x = 0; x < img_w; x++){
-                if ((x > 0) && (tmpImg.at<uchar>(y, x-1) == 255)){
-                    out.at<uchar>(y, x) = 255;
-                    continue;
-                }
-
-                if ((y > 0) && (tmpImg.at<uchar>(y-1, x) == 255)){
-                    out.at<uchar>(y, x) = 255;
-                    continue;
-                }
-
-                if ((x < img_w - 1) && (tmpImg.at<uchar>(y, x+1) == 255)){
-                    out.at<uchar>(y, x) = 255;
-                    continue;
-                }
-
-                if ((y < img_h - 1) && (tmpImg.at<uchar>(y+1, x) == 255)){
-                    out.at<uchar>(y, x) = 255;
-                    continue;
-                }
-            }
-        }
-    }
-
-    return out;
-}
-
-cv::Mat closing(cv::Mat mask, int N)
-{
-    cv::Mat out;
-    out = dilate(mask, N);
-    out = erode(out, N);
-    return out;
-}
-
-cv::Mat opening(cv::Mat mask, int N)
-{
-    cv::Mat out;
-    out = erode(mask, N);
-    out = dilate(out, N);
-    return out;
 }
 
 #endif

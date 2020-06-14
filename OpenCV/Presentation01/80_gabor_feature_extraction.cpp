@@ -30,7 +30,7 @@ int main()
 
     cv::imshow("out", out);
     // write output to disk
-    cv::imwrite("Results/final_out.png", 255*out);
+    /* cv::imwrite("Results/final_out.png", 255*out); */
 
     cv::waitKey(0);
     cv::destroyAllWindows();
